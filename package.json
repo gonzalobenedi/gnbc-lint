@@ -1,0 +1,76 @@
+{
+  "name": "gnbc-lint",
+  "version": "1.0.0",
+  "description": "ESLint configurations for React, Angular, React Native, and Node.js projects with TypeScript support",
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "angular",
+    "react",
+    "react-native",
+    "nodejs",
+    "typescript",
+    "linting",
+    "code-style"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Gonzalo Benedi",
+    "email": "your-email@example.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/gnbc-lint.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/gnbc-lint/issues"
+  },
+  "homepage": "https://github.com/your-username/gnbc-lint#readme",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "react.js",
+    "angular.js",
+    "react-native.js",
+    "node.js",
+    "typescript.js",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "test": "echo \"No tests yet\" && exit 0",
+    "lint": "eslint *.js",
+    "prepare": "npm run lint"
+  },
+  "peerDependencies": {
+    "eslint": "^8.0.0 || ^9.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@typescript-eslint/eslint-plugin": {
+      "optional": true
+    },
+    "@typescript-eslint/parser": {
+      "optional": true
+    },
+    "eslint-plugin-react": {
+      "optional": true
+    },
+    "eslint-plugin-react-hooks": {
+      "optional": true
+    },
+    "eslint-plugin-jsx-a11y": {
+      "optional": true
+    },
+    "@angular-eslint/eslint-plugin": {
+      "optional": true
+    },
+    "@angular-eslint/template-parser": {
+      "optional": true
+    },
+    "eslint-plugin-import": {
+      "optional": true
+    }
+  }
+}
