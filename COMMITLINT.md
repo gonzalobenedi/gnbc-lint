@@ -5,6 +5,7 @@ Este proyecto usa [commitlint](https://commitlint.js.org/) para asegurar que tod
 ## Formato de Commits
 
 Los commits deben seguir el formato:
+
 ```
 <type>[optional scope]: <description>
 
@@ -50,6 +51,7 @@ docs(readme): update configuration examples
 ## Configuración
 
 El proyecto está configurado con:
+
 - **@commitlint/config-conventional**: Configuración base para conventional commits
 - **husky**: Git hooks para ejecutar commitlint antes de cada commit
 
