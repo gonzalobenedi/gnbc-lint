@@ -2,6 +2,8 @@
 
 ESLint configurations for React, Angular, React Native, and Node.js projects with TypeScript support.
 
+**✨ Now supports ESLint Flat Config (v9+)** - the modern way to configure ESLint!
+
 ## 🚀 Quick Start
 
 Install the package and the required peer dependencies based on your project type:
@@ -9,45 +11,110 @@ Install the package and the required peer dependencies based on your project typ
 ### React Projects
 
 ```bash
-npm install --save-dev gnbc-lint eslint eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y
+npm install --save-dev gnbc-lint eslint @eslint/js eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y
 ```
 
-```json
-// .eslintrc.json
-{
-  "extends": ["gnbc-lint/react"]
-}
+```javascript
+// eslint.config.js
+import config from 'gnbc-lint/react';
+
+export default config;
 ```
 
 ### React + TypeScript
 
 ```bash
-npm install --save-dev gnbc-lint eslint eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y @typescript-eslint/eslint-plugin @typescript-eslint/parser
+npm install --save-dev gnbc-lint eslint @eslint/js eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y @typescript-eslint/eslint-plugin @typescript-eslint/parser
 ```
 
-```json
-// .eslintrc.json
-{
-  "extends": ["gnbc-lint/react", "gnbc-lint/typescript"]
-}
+```javascript
+// eslint.config.js
+import reactConfig from 'gnbc-lint/react';
+import tsConfig from 'gnbc-lint/typescript';
+
+export default [
+  ...reactConfig,
+  ...tsConfig,
+];
 ```
 
 ### React Native Projects
 
 ```bash
-npm install --save-dev gnbc-lint eslint eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y eslint-plugin-react-native
+npm install --save-dev gnbc-lint eslint @eslint/js eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y eslint-plugin-react-native
 ```
 
-```json
-// .eslintrc.json
-{
-  "extends": ["gnbc-lint/react-native"]
-}
+```javascript
+// eslint.config.js
+import config from 'gnbc-lint/react-native';
+
+export default config;
 ```
 
 ### Angular Projects
 
 ```bash
+npm install --save-dev gnbc-lint eslint @eslint/js @angular-eslint/eslint-plugin @angular-eslint/template-parser @typescript-eslint/eslint-plugin @typescript-eslint/parser
+```
+
+```javascript
+// eslint.config.js
+import config from 'gnbc-lint/angular';
+
+export default config;
+```
+
+### Node.js Projects
+
+```bash
+npm install --save-dev gnbc-lint eslint @eslint/js eslint-plugin-import
+```
+
+```javascript
+// eslint.config.js
+import config from 'gnbc-lint/node';
+
+export default config;
+```
+
+### TypeScript Projects
+
+```bash
+npm install --save-dev gnbc-lint eslint @eslint/js @typescript-eslint/eslint-plugin @typescript-eslint/parser
+```
+
+```javascript
+// eslint.config.js
+import config from 'gnbc-lint/typescript';
+
+export default config;
+```
+
+### Basic JavaScript Projects
+
+```bash
+npm install --save-dev gnbc-lint eslint @eslint/js
+```
+
+```javascript
+// eslint.config.js
+import config from 'gnbc-lint';
+
+export default config;
+```
+
+## 📦 Available Configurations
+
+| Configuration | Description | File |
+|---------------|-------------|------|
+| `gnbc-lint` | Base configuration for JavaScript projects | `index.js` |
+| `gnbc-lint/react` | React-specific rules with hooks and a11y | `react.js` |
+| `gnbc-lint/react-native` | React Native optimized rules | `react-native.js` |
+| `gnbc-lint/angular` | Angular framework rules and templates | `angular.js` |
+| `gnbc-lint/node` | Node.js environment and import rules | `node.js` |
+| `gnbc-lint/typescript` | TypeScript-specific rules and parsing | `typescript.js` |
+
+## 🔧 Configuration Details
 npm install --save-dev gnbc-lint eslint @angular-eslint/eslint-plugin @angular-eslint/template-parser
 ```
 
