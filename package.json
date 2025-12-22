@@ -42,7 +42,8 @@
   "scripts": {
     "test": "echo \"No tests yet\" && exit 0",
     "lint": "eslint *.js",
-    "prepare": "npm run lint"
+    "prepare": "husky",
+    "commitlint": "commitlint --from HEAD~1 --to HEAD --verbose"
   },
   "peerDependencies": {
     "eslint": "^8.0.0 || ^9.0.0"
@@ -72,5 +73,10 @@
     "eslint-plugin-import": {
       "optional": true
     }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.2.0",
+    "@commitlint/config-conventional": "^20.2.0",
+    "husky": "^9.1.7"
   }
 }
