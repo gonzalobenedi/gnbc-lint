@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x, 20.x]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Run tests
+        run: npm test
+
+      - name: Validate ESLint configurations
+        run: |
+          echo "Validating ESLint flat configurations can be imported..."
+          node -e "require('./index.js')" || { echo "❌ index.js config invalid"; exit 1; }
+          node -e "require('./react.js')" || { echo "❌ react.js config invalid"; exit 1; }
+          node -e "require('./angular.js')" || { echo "❌ angular.js config invalid"; exit 1; }
+          node -e "require('./react-native.js')" || { echo "❌ react-native.js config invalid"; exit 1; }
+          node -e "require('./node.js')" || { echo "❌ node.js config invalid"; exit 1; }
+          node -e "require('./typescript.js')" || { echo "❌ typescript.js config invalid"; exit 1; }
+          echo "✅ All ESLint flat configurations can be imported successfully"
+
+      - name: Test package installation
+        run: |
+          cd /tmp
+          mkdir test-install
+          cd test-install
+          npm init -y
+          npm install ${{ github.workspace }}
+          node -e "console.log('✅ Package installs successfully')"
+
+  commitlint:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate commit messages
+        run: npx commitlint --from=${{ github.event.pull_request.base.sha }} --to=${{ github.sha }} --verbose
