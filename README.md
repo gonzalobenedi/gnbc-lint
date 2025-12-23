@@ -261,6 +261,24 @@ You can override any rules in your project's `.eslintrc.json`:
 
 Found a rule that doesn't work well? Open an issue or submit a PR!
 
+This project uses [Conventional Commits](https://www.conventionalcommits.org/) and automated releases:
+
+- **feat**: New features trigger minor releases
+- **fix**: Bug fixes trigger patch releases  
+- **BREAKING CHANGE**: Breaking changes trigger major releases
+- **docs/style/refactor/test/chore**: No release, documentation/maintenance only
+
+## 🚀 Releases
+
+This project uses automated releases with [semantic-release](https://github.com/semantic-release/semantic-release):
+
+- **Automatic versioning** based on conventional commits
+- **Changelog generation** with release notes
+- **npm publishing** on every release
+- **GitHub releases** with assets
+
+See [CHANGELOG.md](CHANGELOG.md) for version history.
+
 ## 📄 License
 
 MIT © Gonzalo Benedi
