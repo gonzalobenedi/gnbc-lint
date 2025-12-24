@@ -274,10 +274,10 @@ This project uses automated releases with [semantic-release](https://github.com/
 
 - **Automatic versioning** based on conventional commits
 - **Changelog generation** with release notes
-- **npm publishing** on every release
+- **npm publishing** on every release with provenance
 - **GitHub releases** with assets
 
-See [CHANGELOG.md](CHANGELOG.md) for version history.
+See [CHANGELOG.md](CHANGELOG.md) for version history and [NPM_TOKEN_SETUP.md](NPM_TOKEN_SETUP.md) for release configuration.
 
 ## 📄 License
 
