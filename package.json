@@ -1,6 +1,6 @@
 {
   "name": "gnbc-lint",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "ESLint configurations for React, Angular, React Native, and Node.js projects with TypeScript support",
   "keywords": [
     "eslint",
