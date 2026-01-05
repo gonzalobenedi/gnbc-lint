@@ -1,5 +1,5 @@
 /**
- * Base ESLint configuration for JavaScript projects (Flat Config)
+ * Base ESLint configuration for JavaScript projects with Prettier integration (Flat Config)
  * @author Gonzalo Benedi
  */
 
@@ -27,7 +27,13 @@ module.exports = [
         global: "readonly",
       },
     },
+    plugins: {
+      prettier: require("eslint-plugin-prettier"),
+    },
     rules: {
+      // Prettier integration
+      "prettier/prettier": "error",
+
       // Possible Errors
       "no-console": "warn",
       "no-debugger": "error",
@@ -52,25 +58,25 @@ module.exports = [
       "prefer-const": "error",
       "prefer-arrow-callback": "error",
 
-      // Stylistic Issues
-      indent: ["error", 2, { SwitchCase: 1 }],
-      "linebreak-style": ["error", "unix"],
-      quotes: ["error", "single", { avoidEscape: true }],
-      semi: ["error", "always"],
-      "comma-dangle": ["error", "always-multiline"],
-      "object-curly-spacing": ["error", "always"],
-      "array-bracket-spacing": ["error", "never"],
-      "space-before-blocks": "error",
-      "keyword-spacing": "error",
-      "space-infix-ops": "error",
-      "no-trailing-spaces": "error",
-      "eol-last": "error",
-
-      // ES6+
-      "arrow-spacing": "error",
+      // ES6+ (non-formatting)
       "no-duplicate-imports": "error",
       "prefer-template": "error",
-      "template-curly-spacing": ["error", "never"],
+
+      // Disable rules that conflict with Prettier
+      indent: "off",
+      "linebreak-style": "off", 
+      quotes: "off",
+      semi: "off",
+      "comma-dangle": "off",
+      "object-curly-spacing": "off",
+      "array-bracket-spacing": "off",
+      "space-before-blocks": "off",
+      "keyword-spacing": "off",
+      "space-infix-ops": "off",
+      "no-trailing-spaces": "off",
+      "eol-last": "off",
+      "arrow-spacing": "off",
+      "template-curly-spacing": "off",
     },
   },
 ];

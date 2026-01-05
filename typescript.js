@@ -1,5 +1,5 @@
 /**
- * TypeScript ESLint configuration (Flat Config)
+ * TypeScript ESLint configuration with Prettier integration (Flat Config)
  * @author Gonzalo Benedi
  */
 
@@ -20,6 +20,7 @@ module.exports = [
       },
     },
     plugins: {
+      prettier: require("eslint-plugin-prettier"),
       "@typescript-eslint": tseslint,
     },
     rules: {

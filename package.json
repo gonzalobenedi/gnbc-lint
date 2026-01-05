@@ -1,7 +1,7 @@
 {
   "name": "gnbc-lint",
   "version": "0.0.0-development",
-  "description": "ESLint configurations for React, Angular, React Native, and Node.js projects with TypeScript support",
+  "description": "ESLint configurations for React, Angular, React Native, and Node.js projects with TypeScript and Prettier integration",
   "keywords": [
     "eslint",
     "eslint-config",
@@ -10,6 +10,8 @@
     "react-native",
     "nodejs",
     "typescript",
+    "prettier",
+    "formatting",
     "linting",
     "code-style"
   ],
@@ -34,6 +36,7 @@
     "react-native.js",
     "node.js",
     "typescript.js",
+    ".prettierrc",
     "README.md"
   ],
   "engines": {
@@ -47,7 +50,9 @@
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
-    "eslint": "^8.0.0 || ^9.0.0"
+    "eslint": "^8.0.0 || ^9.0.0",
+    "prettier": "^3.0.0",
+    "eslint-plugin-prettier": "^5.0.0"
   },
   "peerDependenciesMeta": {
     "@typescript-eslint/eslint-plugin": {

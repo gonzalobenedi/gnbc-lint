@@ -1,5 +1,5 @@
 /**
- * React ESLint configuration (Flat Config)
+ * React ESLint configuration with Prettier integration (Flat Config)
  * @author Gonzalo Benedi
  */
 
@@ -13,6 +13,7 @@ module.exports = [
   {
     files: ["**/*.{js,jsx}"],
     plugins: {
+      prettier: require("eslint-plugin-prettier"),
       react,
       "react-hooks": reactHooks,
       "jsx-a11y": jsxA11y,

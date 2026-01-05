@@ -1,8 +1,9 @@
 # GNBC Lint
 
-ESLint configurations for React, Angular, React Native, and Node.js projects with TypeScript support.
+ESLint configurations for React, Angular, React Native, and Node.js projects with TypeScript and **Prettier integration**.
 
-**✨ Now supports ESLint Flat Config (v9+)** - the modern way to configure ESLint!
+**✨ Now supports ESLint Flat Config (v9+)** - the modern way to configure ESLint!  
+**🎨 Prettier integration included** - consistent code formatting out of the box!
 
 ## 🚀 Quick Start
 
@@ -11,7 +12,7 @@ Install the package and the required peer dependencies based on your project typ
 ### React Projects
 
 ```bash
-npm install --save-dev gnbc-lint eslint @eslint/js eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y
+npm install --save-dev gnbc-lint eslint @eslint/js prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y
 ```
 
 ```javascript
@@ -24,7 +25,7 @@ export default config;
 ### React + TypeScript
 
 ```bash
-npm install --save-dev gnbc-lint eslint @eslint/js eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y @typescript-eslint/eslint-plugin @typescript-eslint/parser
+npm install --save-dev gnbc-lint eslint @eslint/js prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y @typescript-eslint/eslint-plugin @typescript-eslint/parser
 ```
 
 ```javascript
@@ -38,7 +39,7 @@ export default [...reactConfig, ...tsConfig];
 ### React Native Projects
 
 ```bash
-npm install --save-dev gnbc-lint eslint @eslint/js eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y eslint-plugin-react-native
+npm install --save-dev gnbc-lint eslint @eslint/js prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y eslint-plugin-react-native
 ```
 
 ```javascript
@@ -51,7 +52,7 @@ export default config;
 ### Angular Projects
 
 ```bash
-npm install --save-dev gnbc-lint eslint @eslint/js @angular-eslint/eslint-plugin @angular-eslint/template-parser @typescript-eslint/eslint-plugin @typescript-eslint/parser
+npm install --save-dev gnbc-lint eslint @eslint/js prettier eslint-plugin-prettier @angular-eslint/eslint-plugin @angular-eslint/template-parser @typescript-eslint/eslint-plugin @typescript-eslint/parser
 ```
 
 ```javascript
@@ -64,7 +65,7 @@ export default config;
 ### Node.js Projects
 
 ```bash
-npm install --save-dev gnbc-lint eslint @eslint/js eslint-plugin-import
+npm install --save-dev gnbc-lint eslint @eslint/js prettier eslint-plugin-prettier eslint-plugin-import
 ```
 
 ```javascript
@@ -77,7 +78,7 @@ export default config;
 ### TypeScript Projects
 
 ```bash
-npm install --save-dev gnbc-lint eslint @eslint/js @typescript-eslint/eslint-plugin @typescript-eslint/parser
+npm install --save-dev gnbc-lint eslint @eslint/js prettier eslint-plugin-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser
 ```
 
 ```javascript
@@ -90,7 +91,7 @@ export default config;
 ### Basic JavaScript Projects
 
 ```bash
-npm install --save-dev gnbc-lint eslint @eslint/js
+npm install --save-dev gnbc-lint eslint @eslint/js prettier eslint-plugin-prettier
 ```
 
 ```javascript
@@ -113,7 +114,7 @@ export default config;
 
 ## 🔧 Configuration Details
 
-npm install --save-dev gnbc-lint eslint @angular-eslint/eslint-plugin @angular-eslint/template-parser
+npm install --save-dev gnbc-lint eslint prettier eslint-plugin-prettier @angular-eslint/eslint-plugin @angular-eslint/template-parser
 
 ````
 
@@ -127,7 +128,7 @@ npm install --save-dev gnbc-lint eslint @angular-eslint/eslint-plugin @angular-e
 ### Node.js Projects
 
 ```bash
-npm install --save-dev gnbc-lint eslint eslint-plugin-import
+npm install --save-dev gnbc-lint eslint prettier eslint-plugin-prettier eslint-plugin-import
 ```
 
 ```json
@@ -140,7 +141,7 @@ npm install --save-dev gnbc-lint eslint eslint-plugin-import
 ### Node.js + TypeScript
 
 ```bash
-npm install --save-dev gnbc-lint eslint eslint-plugin-import @typescript-eslint/eslint-plugin @typescript-eslint/parser
+npm install --save-dev gnbc-lint eslint prettier eslint-plugin-prettier eslint-plugin-import @typescript-eslint/eslint-plugin @typescript-eslint/parser
 ```
 
 ```json
@@ -154,12 +155,41 @@ npm install --save-dev gnbc-lint eslint eslint-plugin-import @typescript-eslint/
 
 | Configuration            | Description                 | Extends                   |
 | ------------------------ | --------------------------- | ------------------------- |
-| `gnbc-lint`              | Base JavaScript rules       | `eslint:recommended`      |
-| `gnbc-lint/react`        | React + JSX + Accessibility | Base + React plugins      |
-| `gnbc-lint/react-native` | React Native optimized      | React config + RN plugins |
-| `gnbc-lint/angular`      | Angular + Templates         | Base + Angular plugins    |
-| `gnbc-lint/node`         | Node.js + Import rules      | Base + Import plugin      |
-| `gnbc-lint/typescript`   | TypeScript rules            | Base + TS plugins         |
+| `gnbc-lint`              | Base JavaScript rules + Prettier | `eslint:recommended` + Prettier      |
+| `gnbc-lint/react`        | React + JSX + Accessibility + Prettier | Base + React plugins + Prettier      |
+| `gnbc-lint/react-native` | React Native optimized + Prettier      | React config + RN plugins + Prettier |
+| `gnbc-lint/angular`      | Angular + Templates + Prettier         | Base + Angular plugins + Prettier    |
+| `gnbc-lint/node`         | Node.js + Import rules + Prettier      | Base + Import plugin + Prettier      |
+| `gnbc-lint/typescript`   | TypeScript rules + Prettier            | Base + TS plugins + Prettier         |
+
+## 🎨 Prettier Integration
+
+All configurations include **Prettier integration by default**:
+
+- **Automatic formatting**: Code is formatted according to Prettier rules
+- **Conflict resolution**: ESLint formatting rules are disabled to prevent conflicts
+- **Included configuration**: A sensible `.prettierrc` configuration is included
+- **Plugin integration**: Uses `eslint-plugin-prettier` for seamless integration
+
+### Prettier Configuration
+
+The included `.prettierrc` provides these defaults:
+
+```json
+{
+  "semi": true,
+  "trailingComma": "es5",
+  "singleQuote": false,
+  "printWidth": 80,
+  "tabWidth": 2,
+  "useTabs": false,
+  "bracketSpacing": true,
+  "arrowParens": "avoid",
+  "endOfLine": "lf"
+}
+```
+
+**You can override these settings** by creating your own `.prettierrc` in your project root.
 
 ## 🛠 Configuration Examples
 
