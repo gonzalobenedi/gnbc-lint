@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/gonzalobenedi/gnbc-lint/compare/v1.0.0...v2.0.0) (2026-01-05)
+
+
+### Features
+
+* integrate prettier by default in all eslint configurations ([962ce6a](https://github.com/gonzalobenedi/gnbc-lint/commit/962ce6ab8f12907a5fef6cb157ccab04368ffe1c))
+
+
+### BREAKING CHANGES
+
+* prettier is now a required peer dependency
+
 # 1.0.0 (2026-01-05)
 
 
