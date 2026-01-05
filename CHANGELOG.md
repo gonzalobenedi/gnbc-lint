@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/gonzalobenedi/gnbc-lint/compare/v2.0.0...v2.0.1) (2026-01-05)
+
+
+### Bug Fixes
+
+* add id-token permission in release workflow ([74b691e](https://github.com/gonzalobenedi/gnbc-lint/commit/74b691efa34608cb0ec77e43846c66f987a66d1d))
+
 # [2.0.0](https://github.com/gonzalobenedi/gnbc-lint/compare/v1.0.0...v2.0.0) (2026-01-05)
 
 

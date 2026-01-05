@@ -1,6 +1,6 @@
 {
   "name": "gnbc-lint",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "ESLint configurations for React, Angular, React Native, and Node.js projects with TypeScript and Prettier integration",
   "keywords": [
     "eslint",
